@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    {% block title %}
+        <title>Online System</title>
+    {% endblock %}
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <link href="{% static 'main/tutorial/python/index_style.css' %}" rel="stylesheet">
+
+    {% block css_link %}
+
+    {% endblock %}
+
+
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'main/header/js/main.js' %}"></script>
+
+    <!-- Bootstrap CSS File -->
+    <link href="{% static 'main/header/lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'main/header/lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'main/header/lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'main/header/lib/venobox/venobox.css' %}" rel="stylesheet">
+    <link href="{% static 'main/header/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+
+            $('[data-toggle="tooltip"]').click(function () {
+                $('[data-toggle="tooltip"]').tooltip("hide");
+
+
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+{% block body %}
+{% endblock %}
+</body>

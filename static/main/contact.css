@@ -1,0 +1,15 @@
+.my-font {
+    font-weight: 400;
+    color: #102a43;
+    font-family: 'Lato', Helvetica, Arial, Lucida, sans-serif;
+    font-style: normal;
+    text-transform: none;
+    text-decoration: none;
+    padding-bottom: 10px;
+}
+
+.my-p {
+    color: rgb(102,103,142);
+}
+
+

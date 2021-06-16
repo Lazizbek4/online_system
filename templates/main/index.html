@@ -1,0 +1,157 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block body %}
+    <div class="custom-cursor">
+        <!--Header-->
+        {% include 'main/header.html' %}
+        <!-- #header -->
+
+        <!--==========================
+          Intro Section
+        ============================-->
+        <section id="intro" style="background-image: url('{% static 'images/7.jpg' %}')">
+            <div class="intro-container wow fadeIn">
+                <h1 class="mb-4 pb-0">The Complete<br><span>Python</span> Programming Courses </h1>
+                <p class="mb-4 pb-0">Stay Hungry. Stay Foolish! - Steve Jobs</p>
+
+                <a href="#" class="about-btn scrollto">Start Learning</a>
+            </div>
+        </section>
+
+        <main id="main">
+
+
+            <section id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p class="text-capitalize" style="font-size: 1.8em;">Making every student unstoppable!</p>
+                            <p>"If you want to teach people a new way of thinking, don't bother
+                                trying to teach them. Instead, give them a tool,the use of which will lead to new ways
+                                of
+                                thinking."<strong><br>- R.Buckminster Fuller</strong></p>
+                        </div>
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-3">
+                            <h3>Contact us</h3>
+                            <p>Mail : <span class="text-danger font-weight-bold">lazizbek.org@gmail.com</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="schedule" class="section-with-bg">
+                <div class=" mx-5 wow fadeInUp">
+                    <div class="section-header">
+                        <h2 style="color: rgb(14,27,77)">Complete Python Course</h2>
+                        <p class="text-capitalize">start learning now and get high paying jobs</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 wow fadeInUp" style="font-family:'Poppins', sans-serif; font-weight: 500;">
+                            <h3 style="color: rgb(16,42,67); font-weight: 700; font-size: 1.9em;" class="mb-4">Why should I learn Python?</h3>
+
+                            <ul class="list-nav list-unstyled mt-4" style="font-size: 1.05em; font-weight: 500;">
+                                <li class="my-3"><img style="height: 20px;width: 20px;"
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
+                                    <span>Easy to learn and clean syntax</span>
+                                </li>
+                                <li class="my-3"><img style="height: 20px;width: 20px;"
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
+                                    <span>Open source and great community support</span>
+                                </li>
+                                <li class="my-3"><img style="height: 20px;width: 20px;"
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
+                                    <span>High Salary <strong>$ 120K</strong> per year</span>
+                                </li>
+                                <li class="my-3"><img style="height: 20px;width: 20px;"
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
+                                    <span>Good start for learning <span class="text-dark font-weight-bold">AI</span> and <span
+                                            class="text-dark font-weight-bold">Data Science</span></span>
+                                </li>
+                                <li class="my-3"><img style="height: 20px;width: 20px;"
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
+                                    <span>Cross-Platform and Versatile language</span>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="col-md-8 wow fadeInUp">
+                            <img class="img-responsive img-thumbnail"
+                                 src="{% static 'images/article.jpg' %}" alt="Why should I learn Python?">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-8 wow fadeInUp">
+                            <img class="img-responsive img-thumbnail"
+                                 src="{% static 'images/starting.jpg' %}" alt="Where to start ?">
+                        </div>
+                        <div class="col-md-4 wow fadeInUp" style="font-family:'Poppins', sans-serif;">
+                            <h3 style="color: rgb(16,42,67); font-weight: 700; font-size: 1.9em;" class="mb-4">Where to start ? </h3>
+                            <p style="font-size: 1.1em;">The key to advancing your coding skills is having a good attitude towards it. Start with
+                                basics and practice a lot! </p>
+                            <ul class="list-nav list-unstyled mt-4" style="font-size: 1.05em; font-weight: 500;">
+                                <li class="my-3"><img style="height: 20px;width: 20px;"
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
+                                    <span>Start Full Python Course with us</span>
+                                </li>
+                                <li class="my-3"><img style="height: 20px;width: 20px;"
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
+                                    <span>Keep Practicing Online</span>
+                                </li>
+                                <li class="my-3"><img style="height: 20px;width: 20px;"
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
+                                    <span>Don't Hesitate To Ask</span>
+                                </li>
+                                <li class="my-3"><img style="height: 20px;width: 20px;"
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
+                                    <span>Start Keeping Daily Notes</span>
+                                </li>
+                                <li class="my-3"><img style="height: 20px;width: 20px;"
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
+                                    <span>Be Part Of Our Community</span>
+                                </li>
+
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+        <!--Footer-->
+        {% include 'main/footer.html' %}
+
+        <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+    </div>
+    <!-- JavaScript Libraries -->
+    <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+    <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/superfish/hoverIntent.js' %}"></script>
+    <script src="{% static 'lib/superfish/superfish.min.js' %}"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/venobox/venobox.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+
+    <!-- Template Main Javascript File -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+{% endblock %}
