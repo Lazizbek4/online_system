@@ -1,0 +1,43 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!--title block-->
+{% block title %}
+<title>  Delete Course </title>
+{% endblock %}
+{% block css_link %}
+    <style>
+        #header {
+            background: rgb(6, 12, 34);
+        }
+    </style>
+{% endblock %}
+
+
+{% block body %}
+       {% include 'main/header.html' %}
+    <br><br><br><br>
+    <div class="container my-5 text-center">
+        <h3 class="text-center mt-5">Delete Course</h3>
+        <br>
+        <h5>Are you sure to delete: <span class="text-warning"><em>{{ course }}</em></span> ?</h5>
+
+        <div class="row text-center mt-5">
+
+            <div class="col-md-6">
+                <button class="btn btn-danger"><a class="text-white" href="{% url 'main:course' %}">cancel</a></button>
+            </div>
+            <div class="col-md-6">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <input type="submit" value="Confirm" class="btn btn-info">
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

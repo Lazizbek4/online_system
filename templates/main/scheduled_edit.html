@@ -1,0 +1,98 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+<!--title block-->
+{% block title %}
+    <title>Edit</title>
+{% endblock %}
+
+{% block css_link %}
+    <style>
+        #header {
+            background: rgb(6, 12, 34);
+        }
+    </style>
+{% endblock %}
+
+
+{% block body %}
+    {% include 'main/header.html' %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <br><br> <br><br><br>
+                <div class="content-wrapper">
+                    <h1 class="text-center mb-4 text-capitalize text-info">Update Scheduled Lesson</h1>
+                    <div class="content-body">
+
+
+                        <section class="invoice-edit-wrapper">
+                            <div class="row">
+
+                                <div class="col-xl-12 col-md-12 col-12">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="card box-shadow-2">
+                                                <ul class="nav nav-tabs p-2" id="myTab" role="tablist">
+                                                    <li class="nav-item mr-auto">
+                                                        <a class="nav-link text-white bg-info active" id="home-tab"
+                                                           data-toggle="tab"
+                                                           href="#home" role="tab" aria-controls="home"
+                                                           aria-selected="true">Main</a>
+                                                    </li>
+
+                                                </ul>
+                                                <form action="" method="POST" autocomplete="off">
+                                                    {% csrf_token %}
+                                                    <div class="tab-content" id="myTabContent">
+                                                        <div class="tab-pane fade show active m-2" id="home"
+                                                             role="tabpanel"
+                                                             aria-labelledby="home-tab">
+
+                                                            <table class="table table-striped table-bordered">
+                                                                <tr>
+                                                                    <th class="font-weight-bold">Course Name</th>
+                                                                    <td>{{ form.course|as_crispy_field }}</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="font-weight-bold">Scheduled Date</th>
+                                                                    <td>
+                                                                       {{ form.datetime|as_crispy_field }}
+                                                                    </td>
+                                                                </tr>
+
+                                                            </table>
+                                                            <br>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <button type="submit" class="btn btn-success ml-2 mb-3">Update!
+                                                    </button>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+
+    </div>
+    <br><br>
+    {% include 'main/footer.html' %}
+{% endblock %}

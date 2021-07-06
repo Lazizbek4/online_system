@@ -1,0 +1,129 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+    <title>About Us</title>
+{% endblock %}
+{% block css_link %}
+    <style>
+        #header {
+            background: rgb(6, 12, 34);
+        }
+
+        p {
+            font-weight: 400;
+        }
+
+        .p-size {
+            font-size: 1em;
+        }
+    </style>
+{% endblock %}
+
+
+
+{% block body %}
+    <!--HEADER -->
+    {% include 'main/header.html' %}
+
+    <!--CONTENT -->
+
+    <h2 class="text-center body-color font-italic">About Our System</h2>
+    <div class="container">
+        <hr>
+
+        <br>
+        <br>
+        <div class="h5 text-info my-3"><strong>Section 1.1</strong>: System Overview</div>
+        <p class="p-color p-size ml-3">
+            <span class="text-danger font-weight-bold">QA LTD</span> is a leading training provider in the United
+            Kingdom involved in Professional training, Higher
+            Education, Apprenticeships and Consulting services (https://www.qa.com/). QA’s Higher Education (QAHE)
+            services are delivered via partnerships with UK Universities such as University of Ulster, Northumbria
+            University, University of Roehampton, Solent University, Middlesex University and London Metropolitan
+            university.</p>
+        <p class="p-color p-size ml-3">
+            The COVID-19 Pandemic has resulted in a shift to online learning as well as the need for social distancing,
+            if physical presence is required. The scheduling team, alongside other departments, was very swift in making
+            the transition to online delivery during the lockdown situation which began in March 2020. However, now the
+            lockdown situation is subsiding, there is now a need to gradually move back to face-to-face delivery,
+            keeping social distancing rules in mind.
+
+        </p>
+
+        <hr>
+        <div class="h5 text-info my-3"><strong>Section 1.2</strong>: Our Mission</div>
+        <p class="p-color p-size ml-3">
+            At <span class="text-danger font-weight-bold">QAHE</span>   , the typical class group has about 20-30 students in a regular classroom and about 40-60 students in
+            the lecture theatre. However, the problem is that, with social distancing factored in, the room may only be
+            able to take around half to one-third of the usual numbers. </p>
+              <p class="p-color p-size ml-3">To curb this challenge, one possible solution is
+            to split the class into two or three groups (e.g. Group 1 and Group 2) and have one group attend
+            face-to-face while the other group attends online and alternate this weekly. For example, in Week 1, Group 1
+            will attend face-to-face while Group 2 will join via an online platform e.g. WebEx. For Week 2, the reverse
+            will be the case – Group 1 will attend online while Group 2 will attend a face-to-face session. This will
+            continue in an alternate fashion until the end of the semester, usually in 11-12 weeks in total. Lecturer will be delivering both face-to-face and online sessions at the same time, using
+            our technology. </p>
+        <hr>
+        <div class="h5 text-info my-3"><strong>Section 2.1</strong>: What this system does ?
+        </div>
+        <p class="p-color p-size ml-3">
+            Here is the list of some of the main reasons and aspects why you should choose us :
+        </p>
+        <ul class="ml-3">
+            <li><p class="p-color p-size">Split big groups into subgroups.</p></li>
+            <li><p class="p-color p-size">Delivering face-to-face and online sessions. </p></li>
+            <li><p class="p-color p-size">Booking & tracking groups.</p></li>
+            <li><p class="p-color p-size">Managing and controlling attendance.</p></li>
+            <li><p class="p-color p-size">Optimized Functionality.</p></li>
+
+        </ul>
+        <hr>
+        <div class="h5 text-info my-3"><strong>Section 2.2</strong>: How to get started ?
+        </div>
+        <p class="p-color p-size ml-3">
+           Here is a list of steps tyou need to take before starting to use this system. </p>
+      <ul class="ml-3">
+            <li><p class="p-color p-size">Get general overview from ABOUT US</p></li>
+            <li><p class="p-color p-size">Go through Authentication </p></li>
+            <li><p class="p-color p-size"> Start using our plaform</p></li>
+            <li><p class="p-color p-size">Booking & tracking groups</p></li>
+            <li><p class="p-color p-size">Got stuck? <strong>Contact us!</strong></p></li>
+
+        </ul>
+        <div class="mt-3 mb-4">
+            <button class="prev btn btn-info pl-3"><span><a class="text-white" href="{% url 'main:index' %}"><i
+                    class="fa fa-angle-double-left" aria-hidden="true"></i>&nbsp;&nbsp; Previous</a></span>
+            </button>
+        </div>
+        <br>
+        <!-- Final Words-->
+        <section id="schedule" class="section-with-bg">
+            <div class="container wow fadeInUp">
+
+
+                <div class="section-header my-3">
+                    <p class="text-dark font-weight-bold my-3"> This platform is created by <strong>Lazizbek
+                        Naimjonov</strong>
+                        <img
+                                src="{% static 'images/heart.ico' %}" alt="love icon"
+                                style="width: 25px; height: 25px;"></p>
+                </div>
+
+                <h3 class="sub-heading mt-5">
+                    <span class="text-dark">If you got stuck please let us to help and answer any question you might have. </span>
+                    <br>
+                    We look forward to hearing from you!
+                    <br>
+                    <br>
+                    <strong>* We will contact you as soon as possible:)</strong>
+                </h3>
+
+            </div>
+        </section>
+
+    </div>
+
+
+    <!--FOOTER -->
+    {% include 'main/footer.html' %}
+{% endblock %}

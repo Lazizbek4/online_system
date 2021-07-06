@@ -6,60 +6,41 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-3 col-md-6 footer-info">
+                <div class="col-lg-4 col-md-6 footer-info">
                     <img style="margin-top:-7px;" src="{% static 'images/logo.png' %}" alt="logo">
-                    <p>At <span class="font-weight-bold"
-                            style="color: #f82249;">nodira</span><strong>,</strong>
-                        we believe that anyone can learn anything. All it
-                        takes is
-                        a tenacious spirit, the right guidance, and the tools to see it through. We know that
-                        students are under more pressure than ever. Hence, it’s our job to give every student
-                        the tools and confidence to succeed, no matter what their motivation, or what they’re
-                        striving to achieve.</p>
+                    <p><span class="font-weight-bold"
+                            style="color: #f82249;">QA LTD</span>
+                        is a leading training provider in the United Kingdom involved in Professional training, Higher Education, Apprenticeships and Consulting services. QA’s Higher Education (QAHE) services are delivered via partnerships with Universities like University of Ulster, Northumbria University and etc.</p>
                 </div>
 
-                <div class="col-lg-3 col-md-6 footer-links">
+                <div class="col-lg-4 col-md-6 footer-links">
                     <h4 class="text-capitalize" style="font-family: 'Poppins', sans-serif;font-size: 1.2em;letter-spacing: 1px;">Quick Reference</h4>
                     <ul  style="font-family: 'Poppins', sans-serif;" class="py-2">
-                        <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
-                        <li><i class="fa fa-angle-right"></i> <a href="#">Python Tutorial</a></li>
-                        <li><i class="fa fa-angle-right"></i><a href="#">About us</a></li>
-                        <li><i class="fa fa-angle-right"></i> <a href="#">Contact us</a></li>
-                    </ul>
+                        <li><i class="fa fa-angle-right"></i> <a href="{% url 'main:index' %}">Home</a></li>
+                        <li><i class="fa fa-angle-right"></i> <a href="{% url 'main:course' %}">Courses</a></li>
+                        <li><i class="fa fa-angle-right"></i><a href="{% url 'main:about' %}"> About us</a></li>
+                        <li><i class="fa fa-angle-right"></i> <a href="{% url 'main:contact' %}">Contact us</a></li>
+                          </ul>
                 </div>
 
-
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4 class="text-capitalize" style="font-family: 'Poppins', sans-serif;font-size: 1.2em;letter-spacing: 1px;">Legal Reference</h4>
-                    <ul style="font-family: 'Poppins', sans-serif;" class="py-2">
-                        <li><i class="fa fa-angle-right"></i> <a href="#">Privacy
-                            Policy</a></li>
-                        <li><i class="fa fa-angle-right"></i> <a href="#">Terms &
-                            Conditions</a></li>
-                        <li><i class="fa fa-angle-right"></i> <a href="#">Contribute</a></li>
-                        <li><i class="fa fa-angle-right"></i> <a href="#">Advertising</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-6 footer-contact">
+                <div class="col-lg-4 col-md-6 footer-contact">
                     <h4 class="text-capitalize" style="font-family: 'Poppins', sans-serif;font-size: 1.2em;letter-spacing: 1px;">Contact Us</h4>
                     <p>
-                        6B, Yunusabad District <br>
-                        Tashkent, Uzbekistan 100084<br>
+                         York Street <br>
+                       Belfast, Co. Antrim BT15 1ED<br>
                         <strong>Phone:</strong> +44 7464 878009<br>
-                        <strong>Email:</strong> lazizbek.org@gmail.com<br>
+                        <strong>Email:</strong>  Naimjonov98@mail.ru<br>
                     </p>
 
                     <div class="social-links">
-                        <a href="#" class="twitter" data-toggle="tooltip" data-placement="bottom"
+                        <a href="https://twitter.com/UlsterUni" target="_blank" class="twitter" data-toggle="tooltip" data-placement="bottom"
                            title="Follow on Twitter"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="facebook" data-toggle="tooltip" data-placement="bottom"
+                        <a href="https://www.facebook.com/ulsteruniversity" target="_blank" class="facebook" data-toggle="tooltip" data-placement="bottom"
                            title="Follow on Facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="instagram" data-toggle="tooltip" data-placement="bottom"
+                        <a href="https://www.instagram.com/ulsteruni" target="_blank" class="instagram" data-toggle="tooltip" data-placement="bottom"
                            title="Follow on Instagram"><i class="fa fa-instagram"></i></a>
-                        <a href="#" class="linkedin" data-toggle="tooltip" data-placement="bottom"
-                           title="Follow on LinkedIn"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/channel/UCJCPoVMPAwnWSFPG0HDdHlw/featured" target="_blank" class="youtube" data-toggle="tooltip" data-placement="bottom"
+                           title="Follow on Youtube"><i class="fa fa-youtube"></i></a>
                     </div>
 
                 </div>

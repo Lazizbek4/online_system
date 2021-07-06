@@ -1,6 +1,9 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
+{% block title %}
+     <title>Lazizbek - Online System</title>
+{% endblock %}
 
 {% block body %}
     <div class="custom-cursor">
@@ -8,15 +11,13 @@
         {% include 'main/header.html' %}
         <!-- #header -->
 
-        <!--==========================
-          Intro Section
-        ============================-->
+
         <section id="intro" style="background-image: url('{% static 'images/7.jpg' %}')">
             <div class="intro-container wow fadeIn">
-                <h1 class="mb-4 pb-0">The Complete<br><span>Python</span> Programming Courses </h1>
+                <h1 class="mb-4 pb-0"><span>Lazizbek</span><br> Online Booking & Tracking System </h1>
                 <p class="mb-4 pb-0">Stay Hungry. Stay Foolish! - Steve Jobs</p>
 
-                <a href="#" class="about-btn scrollto">Start Learning</a>
+                <a href="{% url 'main:course' %}" class="about-btn scrollto">View Courses</a>
             </div>
         </section>
 
@@ -29,14 +30,14 @@
                         <div class="col-lg-6">
                             <p class="text-capitalize" style="font-size: 1.8em;">Making every student unstoppable!</p>
                             <p>"If you want to teach people a new way of thinking, don't bother
-                                trying to teach them. Instead, give them a tool,the use of which will lead to new ways
+                                trying to teach them. Instead, give them a tool, the use of which will lead to new ways
                                 of
                                 thinking."<strong><br>- R.Buckminster Fuller</strong></p>
                         </div>
                         <div class="col-lg-3"></div>
                         <div class="col-lg-3">
                             <h3>Contact us</h3>
-                            <p>Mail : <span class="text-danger font-weight-bold">lazizbek.org@gmail.com</span></p>
+                            <p>Mail : <span class="text-danger font-weight-bold">Naimjonov98@mail.ru</span></p>
                         </div>
                     </div>
                 </div>
@@ -46,42 +47,41 @@
             <section id="schedule" class="section-with-bg">
                 <div class=" mx-5 wow fadeInUp">
                     <div class="section-header">
-                        <h2 style="color: rgb(14,27,77)">Complete Python Course</h2>
-                        <p class="text-capitalize">start learning now and get high paying jobs</p>
+                        <h2 style="color: rgb(14,27,77)">`Lazizbek` Online System</h2>
+                        <p class="text-capitalize">Being able to learn anywhere and anytime</p>
                     </div>
 
                     <div class="row">
                         <div class="col-md-4 wow fadeInUp" style="font-family:'Poppins', sans-serif; font-weight: 500;">
-                            <h3 style="color: rgb(16,42,67); font-weight: 700; font-size: 1.9em;" class="mb-4">Why should I learn Python?</h3>
+                            <h3 style="color: rgb(16,42,67); font-weight: 700; font-size: 1.9em;" class="mb-4">What this system does?</h3>
 
                             <ul class="list-nav list-unstyled mt-4" style="font-size: 1.05em; font-weight: 500;">
                                 <li class="my-3"><img style="height: 20px;width: 20px;"
-                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
-                                    <span>Easy to learn and clean syntax</span>
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="What this system does">
+                                    <span>Split big groups into subgroups</span>
                                 </li>
                                 <li class="my-3"><img style="height: 20px;width: 20px;"
-                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
-                                    <span>Open source and great community support</span>
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="What this system does">
+                                    <span>Delivering face-to-face and online sessions</span>
                                 </li>
                                 <li class="my-3"><img style="height: 20px;width: 20px;"
-                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
-                                    <span>High Salary <strong>$ 120K</strong> per year</span>
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="What this system does">
+                                    <span>Booking & tracking groups</span>
                                 </li>
                                 <li class="my-3"><img style="height: 20px;width: 20px;"
-                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
-                                    <span>Good start for learning <span class="text-dark font-weight-bold">AI</span> and <span
-                                            class="text-dark font-weight-bold">Data Science</span></span>
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="What this system does">
+                                    <span>Managing and controlling attendance</span>
                                 </li>
                                 <li class="my-3"><img style="height: 20px;width: 20px;"
-                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
-                                    <span>Cross-Platform and Versatile language</span>
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="What this system does">
+                                    <span>Optimized Functionality</span>
                                 </li>
 
                             </ul>
                         </div>
                         <div class="col-md-8 wow fadeInUp">
                             <img class="img-responsive img-thumbnail"
-                                 src="{% static 'images/article.jpg' %}" alt="Why should I learn Python?">
+                                 src="{% static 'images/ATTENDANCE.png' %}" alt="Why should I use it?">
                         </div>
                     </div>
                     <br>
@@ -92,32 +92,31 @@
                     <div class="row">
                         <div class="col-md-8 wow fadeInUp">
                             <img class="img-responsive img-thumbnail"
-                                 src="{% static 'images/starting.jpg' %}" alt="Where to start ?">
+                                 src="{% static 'images/guide.jpg' %}" alt="How to get started ?">
                         </div>
                         <div class="col-md-4 wow fadeInUp" style="font-family:'Poppins', sans-serif;">
-                            <h3 style="color: rgb(16,42,67); font-weight: 700; font-size: 1.9em;" class="mb-4">Where to start ? </h3>
-                            <p style="font-size: 1.1em;">The key to advancing your coding skills is having a good attitude towards it. Start with
-                                basics and practice a lot! </p>
+                            <h3 style="color: rgb(16,42,67); font-weight: 700; font-size: 1.9em;" class="mb-4">How to get started ? </h3>
+                            <p style="font-size: 1.1em;">Here is a list of steps tyou need to take before starting to use this system.  </p>
                             <ul class="list-nav list-unstyled mt-4" style="font-size: 1.05em; font-weight: 500;">
                                 <li class="my-3"><img style="height: 20px;width: 20px;"
-                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
-                                    <span>Start Full Python Course with us</span>
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="how to use it">
+                                    <span>Get general overview from ABOUT US</span>
                                 </li>
                                 <li class="my-3"><img style="height: 20px;width: 20px;"
-                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
-                                    <span>Keep Practicing Online</span>
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="how to use it">
+                                    <span>Go through Authentication</span>
                                 </li>
                                 <li class="my-3"><img style="height: 20px;width: 20px;"
-                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
-                                    <span>Don't Hesitate To Ask</span>
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="how to use it">
+                                    <span>Start using our plaform</span>
                                 </li>
                                 <li class="my-3"><img style="height: 20px;width: 20px;"
-                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
-                                    <span>Start Keeping Daily Notes</span>
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="how to use it">
+                                    <span>Booking & tracking groups</span>
                                 </li>
                                 <li class="my-3"><img style="height: 20px;width: 20px;"
-                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="python-correct-image">
-                                    <span>Be Part Of Our Community</span>
+                                                      src="{% static 'images/output-onlinepngtools.png' %}" alt="how to use it">
+                                    <span>Got stuck? <strong>Contact us!</strong></span>
                                 </li>
 
 

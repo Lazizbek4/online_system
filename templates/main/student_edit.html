@@ -1,0 +1,158 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+<!--title block-->
+{% block title %}
+    <title>Student Info</title>
+{% endblock %}
+
+{% block css_link %}
+    <style>
+        #header {
+            background: rgb(6, 12, 34);
+        }
+    </style>
+{% endblock %}
+
+
+{% block body %}
+    {% include 'main/header.html' %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <br><br> <br><br><br>
+                <div class="content-wrapper">
+                    <h1 class="text-center mb-3">{{ student.first_name }} {{ student.last_name }}</h1>
+                    <div class="content-body">
+
+
+                        <section class="invoice-edit-wrapper">
+                            <div class="row">
+
+                                <div class="col-xl-12 col-md-12 col-12">
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <div class="card box-shadow-2">
+                                                <ul class="nav nav-tabs p-2" id="myTab" role="tablist">
+                                                    <li class="nav-item mr-auto">
+                                                        <a class="nav-link text-white bg-info active" id="home-tab"
+                                                           data-toggle="tab"
+                                                           href="#home" role="tab" aria-controls="home"
+                                                           aria-selected="true">Main</a>
+                                                    </li>
+
+                                                </ul>
+                                                <form action="" method="POST" autocomplete="off">
+                                                    {% csrf_token %}
+                                                    <div class="tab-content" id="myTabContent">
+                                                        <div class="tab-pane fade show active m-2" id="home"
+                                                             role="tabpanel"
+                                                             aria-labelledby="home-tab">
+
+                                                            <table class="table table-striped table-bordered">
+                                                                <tr>
+                                                                    <th class="font-weight-bold">First Name<span class="text-danger">*</span></th>
+
+                                                                    <td><input type="text" name="first_name" required
+                                                                               class="form-control"
+                                                                               value="{{ student.first_name }}"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="font-weight-bold">Middle Name</th>
+                                                                    <td><input type="text" name="middle_name"
+                                                                               class="form-control"
+                                                                               value="{% if student.middle_name %}{{ student.middle_name }}{% else %}-{% endif %}">
+
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="font-weight-bold">Last Name<span class="text-danger">*</span></th>
+                                                                    <td><input type="text" name="last_name" required
+                                                                               class="form-control"
+                                                                               value="{{ student.last_name }}"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="font-weight-bold">Email<span class="text-danger">*</span></th>
+                                                                    <td><input type="email" name="email" required
+                                                                               class="form-control"
+                                                                               value="{{ student.email }}"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="font-weight-bold">Phone<span class="text-danger">*</span></th>
+                                                                    <td><input type="text" name="phone" required
+                                                                               class="form-control"
+                                                                               value="{{ student.phone }}"></td>
+                                                                </tr>
+
+                                                                <tr style="display: none;">
+                                                                    <th class="font-weight-bold">Class Name</th>
+                                                                    <td>{{ form.class_name }}</td>
+                                                                </tr>
+
+                                                            </table>
+                                                            <br>
+{#                                                            <table class="table table-striped table-bordered text-center">#}
+{#                                                                <thead>#}
+{#                                                                 <tr>#}
+{#                                                                {% for week in all_weeks %}#}
+{#                                                                    <th>{{ week.title }}</th>#}
+{#                                                                {% endfor %}#}
+{#                                                            </tr>#}
+{#                                                                </thead>#}
+{#                                                                <tbody>#}
+{#                                                                <tr>#}
+{#                                                                 {% for week in all_weeks %}#}
+{#                                                                   <td>#}
+{#                                                                       <select name="attendance" id="">#}
+{#                                                                         <option value="{% if week.title in attended_weeks %}O{% else %}{{ week.attendance }}{% endif %}">{% if week.title in attended_weeks %}O{% else %}{{ week.attendance }}{% endif %}</option>#}
+{#                                                                         <option value="{% if week.title not in attended_weeks %}O{% else %}{{ week.attendance }}{% endif %}">{% if week.title not in attended_weeks %}O{% else %}{{ week.attendance }}{% endif %}</option>#}
+{#                                                                       </select>#}
+{#                                                                   </td>#}
+{#                                                                    <td>{% if week.title in attended_weeks %}O{% else %}{{ week.attendance }}{% endif %}</td>#}
+{#                                                                {% endfor %}#}
+{#                                                               </tr>#}
+{#                                                                </tbody>#}
+{#                                                            </table>#}
+{#                                                            <p class="font-weight-bold">#}
+{#                                                                <span class="text-info">X</span>: <span#}
+{#                                                                    class="text-danger">Absent</span> <br>#}
+{#                                                                <span class="text-info">O</span>: <span#}
+{#                                                                    class="text-success">Present</span> <br>#}
+{#                                                            </p>#}
+                                                        </div>
+
+                                                    </div>
+
+                                                    <button type="submit" class="btn btn-success ml-2 mb-3">Update!
+                                                    </button>
+                                                </form>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+
+                        <a href="{% url 'main:student_view' student.id %}">
+                            <button class="btn btn-danger mt-2 mb-1" type="button"><i
+                                    class="fa fa-angle-double-left"></i> Previous
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+
+    </div>
+    <br><br>
+    {% include 'main/footer.html' %}
+{% endblock %}

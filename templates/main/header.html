@@ -5,25 +5,26 @@
 
         <div id="logo" class="pull-left">
             <a href="{% url 'main:index' %}" class="scrollto"><img src="{% static 'images/logo.png' %}"
-                                                                  alt="logo"></a>
+                                                                   alt="logo"></a>
         </div>
 
         <nav id="nav-menu-container">
             <ul class="nav-menu">
-
-                <li><a href="#"><span
+                <li><a href="{% url 'main:course' %}"><span
+                        style="font-family:'Poppins', sans-serif;letter-spacing: 1px; ">Courses</span></a></li>
+                <li><a href="{% url 'main:about' %}"><span
                         style="font-family:'Poppins', sans-serif;letter-spacing: 1px; ">About</span></a></li>
-                 <li><a href="{% url 'main:contact' %}"><span
+                <li><a href="{% url 'main:contact' %}"><span
                         style="font-family:'Poppins', sans-serif;letter-spacing: 1px; ">Contact</span></a></li>
 
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'account_logout' %}"><span
-                        style="font-family:'Poppins', sans-serif;letter-spacing: 1px; ">Logout</span></a></li>
+                            style="font-family:'Poppins', sans-serif;letter-spacing: 1px; ">Logout</span></a></li>
                 {% else %}
                     <li><a href="{% url 'account_login' %}"><span
-                        style="font-family:'Poppins', sans-serif;letter-spacing: 1px; ">Login</span></a></li>
-                 <li><a href="{% url 'account_signup' %}"><span
-                        style="font-family:'Poppins', sans-serif;letter-spacing: 1px; ">Sign Up</span></a></li>
+                            style="font-family:'Poppins', sans-serif;letter-spacing: 1px; ">Login</span></a></li>
+                    <li><a href="{% url 'account_signup' %}"><span
+                            style="font-family:'Poppins', sans-serif;letter-spacing: 1px; ">Sign Up</span></a></li>
                 {% endif %}
 
             </ul>

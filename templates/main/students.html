@@ -1,0 +1,95 @@
+{% extends "main/base.html" %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!--title block-->
+{% block title %}
+    <title>Course: {{ course }}</title>
+{% endblock %}
+
+{% block css_link %}
+    <style>
+        #header {
+            background: rgb(6, 12, 34);
+        }
+    </style>
+{% endblock %}
+
+
+{% block body %}
+
+    {% include 'main/header.html' %}
+    <div class="container">
+        <div class="container col-sm-10 col-sm-offset-1">
+            <br><br><br>
+            <!--  adding new course form-->
+            <div class="panel panel-default mt-5">
+                <h2 class='text-center mb-5'><span class="text-danger font-weight-bold">{{ course }}</span></h2>
+
+                <p class="float-right" style="margin-top:-7px;"><a href="{% url 'main:add_student' course.id %}">
+                    <button class="btn btn-info"><i class="fa fa-plus"></i> Add Student</button>
+                </a></p>
+<p class="float-right mr-2" style="margin-top:-7px;"><a href="{% url 'main:scheduled' course.id %}">
+                    <button class="btn btn-dark"><i class="fa fa-eye"></i> Scheduled Lessons</button>
+                </a></p>
+
+
+                <p class="float-right mx-2" style="margin-top:-7px;"><a href="{% url 'main:group_view' course.id %}">
+                    <button class="btn btn-dark"><i class="fa fa-eye"></i> Group View</button>
+                </a></p>
+               <input type="text" class="form-control" id="myInput" placeholder="Search ..."><br>
+            </div>
+
+            <table class="table table-hover table-bordered">
+                <thead>
+                <th><strong>№</strong></th>
+                <th>First Name</th>
+                <th>Middle name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+
+                </thead>
+
+                <tbody id="myTable">
+                {% for student in students %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td><a href="{% url 'main:student_view' student.id %}" data-toggle="tooltip"
+                               data-placement="right"
+                               title="View all details">{{ student.first_name }}</a></td>
+                        <td> {% if student.middle_name %}{{ student.middle_name }}{% else %}-{% endif %}</td>
+                        <td>{{ student.last_name }}</td>
+                        <td>{{ student.email }}</td>
+                        <td>{{ student.phone }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <a href="{% url 'main:course' %}">
+                <button class="btn btn-danger mt-2 mb-1" type="button"><i
+                        class="fa fa-angle-double-left"></i> All Courses
+                </button>
+            </a>
+        </div>
+
+
+    </div>
+    <br><br>
+    {% include 'main/footer.html' %}
+
+
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+{% endblock body %}
