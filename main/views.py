@@ -4,7 +4,7 @@ from django.core.exceptions import ValidationError
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import UpdateView, DeleteView, CreateView
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import *
 from .models import *
 
@@ -32,7 +32,7 @@ def about(request):
     return render(request, 'main/about_company.html', context={})
 
 
-# @login_required
+@login_required
 def course(request):
     if request.method == 'POST':
         form = CourseForm(request.POST)
@@ -54,7 +54,7 @@ def course(request):
     return render(request, 'main/class.html', context)
 
 
-# @login_required
+@login_required
 def course_delete(request, id):
     obj = get_object_or_404(Class, id=id)
 
@@ -65,7 +65,7 @@ def course_delete(request, id):
     context = {'course': obj}
     return render(request, 'main/course_delete.html', context)
 
-
+@login_required
 def add_student(request, id):
     course = get_object_or_404(Class, id=id)
     if request.method == 'POST':
@@ -86,7 +86,7 @@ def add_student(request, id):
     }
     return render(request, 'main/add_student.html', context)
 
-
+@login_required
 def students(request, id):
     class_name = get_object_or_404(Class, id=id)
     students = Student.objects.filter(class_name=class_name)
@@ -94,7 +94,7 @@ def students(request, id):
     context = {'students': students, 'course': class_name}
     return render(request, 'main/students.html', context)
 
-
+@login_required
 def group_view(request, id):
     course_name = get_object_or_404(Class, id=id)
 
@@ -104,7 +104,7 @@ def group_view(request, id):
     context = {'course': course_name, 'group1': group1, 'group2': group2}
     return render(request, 'main/group_view.html', context)
 
-
+@login_required
 def schedule_lesson(request):
     if request.method == 'POST':
         form = ScheduleLessonForm(request.POST)
@@ -120,7 +120,7 @@ def schedule_lesson(request):
         form = ScheduleLessonForm()
     return render(request, 'main/schedule_lesson.html', context={'form': form, })
 
-
+@login_required
 def scheduled(request, id):
     course_name = get_object_or_404(Class, id=id)
     all_scheduled_lessons = ScheduleLesson.objects.filter(course=course_name)
@@ -132,7 +132,7 @@ def scheduled(request, id):
     }
     return render(request, 'main/booked_lessons.html', context)
 
-
+@login_required
 def student_view(request, id):
     student = get_object_or_404(Student, id=id)
     all_attendance = StudentAttendance.objects.filter(student=student)
@@ -144,7 +144,7 @@ def student_view(request, id):
     return render(request, 'main/student_view.html', context)
 
 
-class StudentUpdate(UpdateView):
+class StudentUpdate(LoginRequiredMixin,UpdateView):
     model = Student
     template_name = "main/student_edit.html"
     context_object_name = 'student'
@@ -164,7 +164,7 @@ class StudentUpdate(UpdateView):
         return reverse_lazy('main:student_view', kwargs={'id': self.kwargs['pk']})
 
 
-class StudentDelete(DeleteView):
+class StudentDelete(LoginRequiredMixin,DeleteView):
     model = Student
     success_url = reverse_lazy("main:index")
 
@@ -172,14 +172,14 @@ class StudentDelete(DeleteView):
         return self.post(request, *args, **kwargs)
 
 
-class ScheduleLessonDelete(DeleteView):
+class ScheduleLessonDelete(LoginRequiredMixin,DeleteView):
     model = ScheduleLesson
     success_url = reverse_lazy("main:course")
 
     def get(self, request, *args, **kwargs):
         return self.post(request, *args, **kwargs)
 
-
+@login_required
 def scheduled_attendance(request, id, attd_val):
     course_name = get_object_or_404(Class, id=id)
     schedule = get_object_or_404(ScheduleLesson, id=attd_val)
@@ -206,7 +206,7 @@ def scheduled_attendance(request, id, attd_val):
 
 
 # is not used. Test & Debugging failed. Instead `scheduled_attendance` function is used.
-class GroupAttendance(CreateView):
+class GroupAttendance(LoginRequiredMixin,CreateView):
     model = GroupAttendance
     form_class = GroupAttendanceForm
     template_name = 'main/group_attendance.html'
@@ -227,7 +227,7 @@ class GroupAttendance(CreateView):
         return queryset
 
 
-class ScheduleLessonUpdate(UpdateView):
+class ScheduleLessonUpdate(LoginRequiredMixin,UpdateView):
     model = ScheduleLesson
     template_name = "main/scheduled_edit.html"
     context_object_name = 'lesson'
